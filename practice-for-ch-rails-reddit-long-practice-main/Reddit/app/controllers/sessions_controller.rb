@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
         @user = User.find_by_credentials(username, password)
 
         if @user
-            log_in!(@user)
+            log_in(@user)
             redirect_to user_url(@user)
         else
             redirect_to new_session_url
